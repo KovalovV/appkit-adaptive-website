@@ -1,0 +1,165 @@
+$primary-turquoise-color: #3aced3;
+$primary-turquoise-hover-color: #3aa7aa;
+$primary-grey-color: #a2a6af;
+$primary-black-color: #494d55;
+$primary-white-color: #ffffff;
+$pricing-green-color: #75c181;
+$pricing-blue-color: #58bbee;
+$pricing-orange-color: #F8A13F;
+
+@mixin text-options ($family: 'Helvetica', $size: 16px, $margin-t: 0px, $margin-b: 0px) {
+    font-family: $family;
+    font-size: $size;
+    margin-top: $margin-t;
+    margin-bottom: $margin-b;
+}
+
+.team-bg{
+    background-color: #f5f5f5;
+}
+
+.team-container{
+    padding: 60px 0px;
+}
+
+.team-container > .section-desc{
+    margin-bottom: 60px;
+}
+
+.story{
+    margin: 0 auto;
+    max-width: 800px;
+    color: $primary-black-color;
+    text-align: center;
+}
+
+.section-story p{
+    margin-bottom: 30px;
+}
+
+.profile-card{
+    text-align: center;
+}
+
+.profile-img img{
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.team-cards{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-card > .text{
+    font-style: 16px;
+}
+
+.profile-card{
+    padding: 30px;
+    flex-basis: 48%;
+    background-color: $primary-white-color;
+    border-radius: 10px;
+    margin-top: 60px;
+    @media (max-width: 768px) {
+        flex-basis: 100%;
+    }
+}
+
+.profile-card .title{
+    margin-top: 30px;
+} 
+
+.social-list{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+%list-item{
+    margin-right: 15px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    transition: all .5s ease;
+    &:last-child{
+        margin-right: 0px;
+    }
+    &:hover{
+        transition: all .5s ease;
+    }
+}
+
+.social-list-tw{
+    @extend %list-item;
+    background-color: #55acee;
+    &:hover{
+        background-color: #3ea1ec;
+    }
+}
+
+.social-list-fb{
+    @extend %list-item;
+    background-color: #3b5998;
+    &:hover{
+        background-color: #344e86;
+    }
+}
+
+.social-list-gh{
+    @extend %list-item;
+    background-color: #444;
+    &:hover{
+        background-color: #000;
+    }
+}
+
+.social-list-db{
+    @extend %list-item;
+    background-color: #EC4D8B;
+    &:hover{
+        background-color: #ea367c;
+    }
+}
+
+.social-list-li{
+    @extend %list-item;
+    background-color: #1E6FBA;
+    &:hover{
+        background-color: #2872e9;
+    }
+}
+
+.social-list-gl{
+    @extend %list-item;
+    background-color: turquoise;
+    &:hover{
+        background-color: #3aa7aa;
+    }
+}
+
+.logo-item img{
+    width: 18px;
+    height: 18px;
+    transform: translate(40%, 40%);
+}
+
+.profile-desc{
+    color: #616670;
+}
+
+.profile-desc a{
+    color: $primary-turquoise-hover-color;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+

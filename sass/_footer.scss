@@ -1,0 +1,19 @@
+$primary-grey-color: #a2a6af;
+$primary-turquoise-color: #3aced3;
+
+.footer-bg{
+    background-color: #26282c;
+}
+
+.footer-desc{
+    padding: 15px 0px;
+    color: $primary-grey-color;
+    text-align: center;
+}
+
+.author-link{
+    color: $primary-turquoise-color;
+    &:hover{
+        text-decoration: underline;
+    }
+}

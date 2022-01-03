@@ -1,0 +1,215 @@
+$primary-turquoise-color: #3aced3;
+$primary-turquoise-hover-color: #3aa7aa;
+$primary-grey-color: #a2a6af;
+$primary-black-color: #494d55;
+$primary-white-color: #ffffff;
+$pricing-green-color: #75c181;
+$pricing-blue-color: #58bbee;
+$pricing-orange-color: #f8a13f;
+
+@mixin text-options($family: "Helvetica", $size: 16px, $margin-t: 0px, $margin-b: 0px) {
+    font-family: $family;
+    font-size: $size;
+    margin-top: $margin-t;
+    margin-bottom: $margin-b;
+}
+
+.header-bg {
+    background: url("/12/img/hero-1.jpg") no-repeat center top/cover;
+}
+
+.nav-container {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    box-shadow: 0 0 5px 1px $primary-grey-color;
+}
+
+.top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.logo-container {
+    color: $primary-black-color;
+    display: flex;
+}
+
+.logo-icon-container {
+    margin-right: 5px;
+    background: $primary-turquoise-color;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.logo-icon {
+    transform: translate(50%, 50%);
+    width: 20px;
+    height: 20px;
+}
+
+.logo-title {
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+.logo-title-bold {
+    font-family: 'Helvetica Bold';
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    @media (max-width: 767px) {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background: $primary-black-color;
+        transform: translate(130%, 0%);
+        transition: all 2s ease;
+        &:hover {
+            transform: translate(0%, 0%);
+            transition: all 1s ease;
+        }
+    }
+}
+
+.nav-list-item {
+    margin-left: 30px;
+    position: relative;
+    @media (max-width: 767px) {
+        margin-left: 0px;
+    }
+}
+
+.nav-list-item a {
+    font-size: 16px;
+    font-weight: 700;
+    color: $primary-grey-color;
+    transition: all 0.3s ease;
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 44px;
+        left: 0;
+        width: 0%;
+        height: 4px;
+        background: $primary-turquoise-color;
+        transition: all 0.3s ease;
+        @media (max-width: 767px) {
+            display: none;
+        }
+    }
+    &:hover {
+        color: $primary-black-color;
+        transition: all 0.3s ease;
+        @media (max-width: 767px) {
+            color: $primary-white-color;
+        }
+        &::before {
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+    }
+    @media (max-width: 767px) {
+        line-height: 2.5;
+    }
+}
+
+.nav-burger-menu {
+    display: none;
+    padding: 9px 10px;
+    background: $primary-black-color;
+    border-radius: 5px;
+    cursor: pointer;
+    @media (max-width: 767px) {
+        display: block;
+    }
+    &:hover ~ .nav-list {
+        transform: translate(0%, 0%);
+        transition: all 0.3s ease;
+    }
+}
+
+.nav-burger-menu-row {
+    display: block;
+    width: 22px;
+    height: 3px;
+    border-radius: 2px;
+    margin-top: 4px;
+    background: $primary-white-color;
+    &:first-child {
+        margin-top: 0px;
+    }
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 120px;
+    padding-bottom: 60px;
+}
+
+.header-text {
+    color: $primary-white-color;
+    flex-basis: 40%;
+    @media (max-width: 767px) {
+        flex-basis: 100%;
+    }
+    @media (min-width: 992px) {
+        max-width: 55%;
+    }
+}
+
+.header-img {
+    max-width: 320px;
+    @media (max-width: 767px) {
+        margin-top: 50px;
+    }
+    @media (min-width: 768px) {
+        max-width: 400px;
+    }
+    @media (min-width: 992px) {
+        max-width: 420px;
+    }
+    @media (min-width: 1200px) {
+        max-width: 520px;
+    }
+}
+
+.header-title {
+    @include text-options(Helvetica Bold, 30px, 0px, 15px);
+}
+
+.header-desc {
+    @include text-options(Helvetica, 18px, 0px, 15px);
+}
+
+%btn {
+    @include text-options(Helvetica Bold, 16px, 0px, 0px);
+    color: $primary-white-color;
+    border-radius: 3px;
+    padding: 10px 30px;
+}
+
+.btn-header {
+    @extend %btn;
+    line-height: 4;
+    background: $primary-turquoise-color;
+    transition: all 0.3s ease;
+    &:hover {
+        background: $primary-turquoise-hover-color;
+        transition: all 0.3s ease;
+    }
+}

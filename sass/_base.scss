@@ -1,0 +1,45 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 1170px;
+    min-width: 360px;
+    padding: 0px 15px;
+    margin: 0 auto;
+    @media (min-width: 768px) {
+        width: 750px;
+    }
+    @media (min-width: 992px) {
+        width: 970px;
+    }
+    @media (min-width: 1200px) {
+        width: 1170px;
+    }
+}
+
+body {
+    font-family: 'Helvetica', HelveticaNeue, "TeX Gyre Heros", TeXGyreHeros, FreeSans, "Nimbus Sans L", "Liberation Sans", Arimo, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    // z-index: 0;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+h1{
+    font-weight: 400;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}

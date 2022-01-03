@@ -1,0 +1,109 @@
+$primary-turquoise-color: #3aced3;
+$primary-turquoise-hover-color: #3aa7aa;
+$primary-grey-color: #a2a6af;
+$primary-black-color: #494d55;
+$primary-white-color: #ffffff;
+$pricing-green-color: #75c181;
+$pricing-blue-color: #58bbee;
+$pricing-orange-color: #F8A13F;
+
+@mixin text-options ($family: 'Helvetica', $size: 16px, $margin-t: 0px, $margin-b: 0px) {
+    font-family: $family;
+    font-size: $size;
+    margin-top: $margin-t;
+    margin-bottom: $margin-b;
+}
+
+.pricing-container{
+    padding: 60px 0px;
+}
+
+.pricing-container > .section-desc{
+    margin-bottom: 0px;
+}
+
+.pricing-cards{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+%pricing-card{
+    text-align: center;
+    padding: 30px;
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-top: 60px;
+    @media (max-width: 768px) {
+        flex-basis: 100%;
+    }
+}
+
+.pricing-card-grn{
+    @extend %pricing-card;
+    background-color: $pricing-green-color;
+}
+
+.pricing-card-ble{
+    @extend %pricing-card;
+    background-color: $pricing-blue-color;
+}
+
+.pricing-card-org{
+    @extend %pricing-card;
+    background-color: $pricing-orange-color;
+}
+
+.pricing-cards .title{
+    color: $primary-white-color;
+    margin-bottom: 60px;
+}
+
+.pricing-cards .text{
+    color: $primary-white-color;
+}
+
+.price{
+    color: $primary-white-color;
+    margin-bottom: 15px;
+}
+
+.currency{
+    vertical-align: 0.5em;
+    font-size: 26px;
+    opacity: 0.6;
+}
+
+.number{
+    font-family: 'Helvetica';
+    font-size: 46px;
+}
+
+.price-desc{
+    margin-bottom: 15px;
+}
+
+.price-desc .text{
+    margin-bottom: 15px;
+}
+
+.price-details{
+    color: rgba(0, 0, 0, 0.4);
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+.btn-buy-now {
+    @extend %btn;
+    line-height: 4;
+    background: rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    &:hover {
+        background: rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+    }
+}
+

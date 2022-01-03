@@ -1,0 +1,119 @@
+$primary-turquoise-color: #3aced3;
+$primary-turquoise-hover-color: #3aa7aa;
+$primary-grey-color: #a2a6af;
+$primary-black-color: #494d55;
+$primary-white-color: #ffffff;
+$pricing-green-color: #75c181;
+$pricing-blue-color: #58bbee;
+$pricing-orange-color: #F8A13F;
+
+@mixin text-options ($family: 'Helvetica', $size: 16px, $margin-t: 0px, $margin-b: 0px) {
+    font-family: $family;
+    font-size: $size;
+    margin-top: $margin-t;
+    margin-bottom: $margin-b;
+}
+
+.customers-bg{
+    background: $primary-turquoise-color url('/12/img/map.png') no-repeat center;
+}
+
+.customers-container{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.customers-container > .section-title{
+    color: $primary-white-color;
+}
+
+.reverse{
+    flex-direction: row-reverse;
+}
+
+.review-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    margin: 0 auto;
+    @media (max-width: 767px) {
+        max-width: 720px;
+    }
+    @media (min-width: 768px) {
+        width: 720px;
+    }
+    @media (min-width: 992px) {
+        width: 800px;
+    }
+}
+
+.reverse{
+    flex-direction: row-reverse;
+}
+
+.review-img{
+    border-radius: 50%;
+    overflow: hidden;  
+    width: 60px;
+    height: 60px;
+    @media (min-width: 768px) {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+%review-desc{
+    position: relative;
+    z-index: 1;
+    flex-basis: 75%;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    @media (max-width: 768px) {
+        flex-basis: 70%;
+        padding: 15px;
+    }
+}
+
+.review-desc-row{
+    @extend %review-desc;
+    &:before{
+        position: absolute;
+        content: '';
+        top: 30px;
+        left: -15px;
+        width: 15px;
+        height: 20px;
+        background-color: rgba(0, 0, 0, 0.2);
+        clip-path: polygon(100% 0, 0 50%, 100% 100%);
+        @media (max-width: 768px) {
+            top: 20px;
+        }
+    }
+}
+
+.review-desc-reverse{
+    @extend %review-desc;
+    &:after{
+        position: absolute;
+        content: '';
+        top: 30px;
+        right: -15px;
+        width: 15px;
+        height: 20px;
+        background-color: rgba(0, 0, 0, 0.2);
+        clip-path: polygon(0 0, 0 100%, 100% 50%);
+        @media (max-width: 768px) {
+            top: 20px;
+        }
+    }
+}
+
+.review-quote{
+    color: $primary-white-color;
+    margin-bottom: 15px;
+}
+
+.review-source{
+    color: rgba(0, 0, 0, 0.6);
+}

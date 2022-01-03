@@ -1,0 +1,32 @@
+$primary-turquoise-color: #3aced3;
+$primary-turquoise-hover-color: #3aa7aa;
+$primary-grey-color: #a2a6af;
+$primary-black-color: #494d55;
+$primary-white-color: #ffffff;
+
+@mixin text-options ($family: 'Helvetica', $size: 16px, $margin-t: 0px, $margin-b: 0px) {
+    font-family: $family;
+    font-size: $size;
+    margin-top: $margin-t;
+    margin-bottom: $margin-b;
+}
+
+.contact-bg{
+    background: $primary-black-color url('/12/img/map.png') no-repeat center;
+}
+
+.contact-container{
+    max-width: 600px;
+    padding-top: 60px;
+    padding-bottom: 90px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-container > .section-title{
+    color: $primary-white-color;
+}
+
+.contact-container > .section-desc{
+    color: $primary-white-color;
+}
